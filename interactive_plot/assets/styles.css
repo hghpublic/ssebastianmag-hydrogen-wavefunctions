@@ -1,0 +1,177 @@
+/* ROOT VARIABLES ------------------------------------------------------- */
+
+:root {
+    /* Colors */
+    --color-bg: #0e0e0f;
+    --color-text: #e5e5e5;
+    --color-card: #151515;
+    --color-input-bg: #222;
+    --color-white: #fff;
+
+    /* Slider gradient */
+    --slider-gradient: linear-gradient(90deg, #3a7afe, #6a5af9);
+
+    /* Shadows */
+    --shadow-small: 0 2px 12px rgba(0, 0, 0, 0.45);
+    --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.3);
+    --shadow-large: 0 6px 12px rgba(0, 0, 0, 0.4);
+
+    /* Radii */
+    --radius-small: 5px;
+    --radius-medium: 10px;
+    --radius-large: 15px;
+    --radius-card: 16px;
+
+    /* Spacing */
+    --padding-small: 5px;
+    --padding-medium: 15px;
+    --padding-large: 20px;
+
+    --gap-small: 10px;
+    --gap-medium: 20px;
+
+    --graph-size: 900px;
+}
+
+/* GLOBAL ------------------------------------------------------- */
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    margin: 0;
+    font-family: "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    font-weight: 600;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* DASHBOARD GRID -------------------------------------------------- */
+
+.global-grid {
+    display: grid;
+    grid-template-columns: calc(var(--graph-size) + var(--padding-large) * 2) auto;
+    grid-template-rows: auto;
+    gap: var(--gap-medium);
+    width: 99%; /* Otherwise the page becomes slightly too large → horizontal scrollbar */
+}
+
+/* Right column split into two rows: sliders above, preferences below */
+.controls-grid {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: var(--gap-medium);
+    height: 100%;
+}
+
+/* SLIDERS GRID (top right) */
+.sliders-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap-medium);
+}
+
+/* Slider container */
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding-medium);
+    background-color: var(--color-card);
+    border-radius: var(--radius-medium);
+    box-shadow: var(--shadow-medium);
+}
+
+.slider-container label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 95%;
+    height: 4px;
+    border-radius: 4px;
+    outline: none;
+}
+
+.slider .rc-slider-rail {
+    height: 4px;
+    background: var(--slider-gradient);
+    border-radius: 4px;
+}
+
+.slider .rc-slider-handle {
+    -webkit-appearance: none;
+    height: 18px;
+    width: 18px;
+    background: var(--color-white);
+    border-radius: 50%;
+    margin-top: -7px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    transition: transform 0.15s ease;
+}
+
+/* Preferences */
+.preferences-box {
+    padding: var(--padding-large);
+    background-color: var(--color-card);
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow-large);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.preferences-box h3 {
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.preferences-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap-small) var(--gap-medium);
+    align-items: center;
+}
+
+.preferences-input {
+    padding: var(--padding-small) 8px;
+    border-radius: var(--radius-small);
+    border: none;
+    text-align: center;
+    background-color: var(--color-input-bg);
+    color: var(--color-white);
+}
+
+/* Graph card */
+.graph-card {
+    background: var(--color-card);
+    padding: var(--padding-large);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-small);
+    width: var(--graph-size);
+    height: var(--graph-size);
+}
+
+/* Github */
+.github-link {
+    position: fixed;
+    left: 0.5%;
+    bottom: 0;
+    margin-bottom: 10px;
+}
+
+.github-icon {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.2s ease;
+}
+
+.github-icon:hover {
+    transform: scale(1.2);
+}
