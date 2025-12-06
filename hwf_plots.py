@@ -31,6 +31,11 @@ class WaveFunction(BaseModel):
     phi_value: float = 0.0
     phi_mode: Literal["plane", "constant"] = "plane"
 
+    def __hash__(self):
+        """Returns a hash based on the value of all attributes"""
+        # hash a tuple of sorted (key, value) pairs
+        # Sort to make sure changing the order of attributes doesn't affect the hash
+        return hash(tuple(sorted(self.__dict__.items())))
 
 def plot_hydrogen_wavefunction_xz(
         wf: WaveFunction,

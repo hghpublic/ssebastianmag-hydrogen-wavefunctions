@@ -8,6 +8,15 @@ Modeling and visualization of bound-state hydrogen eigenfunctions and electron p
 * NumPy 2.3.2
 * SciPy 1.16.1
 
+For interactive plotting the following modules are also required:
+
+* Plotly 6.5.0
+* Dash 3.3.0
+
+Both are included in the [requirements](requirements.txt) file and automatically installed when running:
+
+`pip install -r requirements.txt`
+
 ### Model computations:
 - Normalized radial functions with stable log-gamma normalization & complex spherical harmonics.
 - Stationary-state wavefunction on an $x–z$ plane grid $(y=0)$.
@@ -21,6 +30,9 @@ Modeling and visualization of bound-state hydrogen eigenfunctions and electron p
 * [hwf_plots.py - Plotting module](hwf_plots.py)
 * [main.py - Application entry-point to showcase samples](main.py)
 * [hydrogen_wavefunctions.ipynb - IPython / Jupyter Notebook](hydrogen_wavefunctions.ipynb)
+* [interactive_plot.py - Interactive plot entry point](interactive_plot/interactive_plot.py)
+* [interactive_plot_util.py - Interactive plot module](interactive_plot/interactive_plot_util.py)
+* [Assets/: Directory containing assets for the interactive plot](interactive_plot/assets)
 
 ---
 
